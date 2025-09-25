@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма Заказа Цветов</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1 { text-align: center; color: #333; }
+        label { display: block; margin: 10px 0 5px; font-weight: bold; }
+        input[type="text"], input[type="number"], textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #ff69b4; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%; }
+        button:hover { background-color: #e3509a; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Оформление Заказа Цветов</h1>
+        
+        <form action="process.php" method="POST">
+            
+            <label for="flower_type">Тип Цветка:</label>
+            <input type="text" id="flower_type" name="flower_type" required placeholder="Например: Роза, Тюльпан">
+            
+            <label for="bouquet_price">Цена Букета (RUB):</label>
+            <input type="number" id="bouquet_price" name="bouquet_price" min="100" step="0.01" required placeholder="Минимальная цена 100.00">
+            
+            <label for="recipient_name">Имя Получателя:</label>
+            <input type="text" id="recipient_name" name="recipient_name" required placeholder="ФИО получателя">
+            
+            <label for="delivery_address">Адрес Доставки:</label>
+            <textarea id="delivery_address" name="delivery_address" rows="4" required placeholder="Полный адрес: улица, дом, квартира..."></textarea>
+            
+            <button type="submit">Оформить Заказ</button>
+        </form>
+    </div>
+</body>
+</html>
